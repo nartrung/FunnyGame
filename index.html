@@ -21,13 +21,6 @@
         <div class="row">
           <div class="col-md-6">
             <div class="content">
-              <div
-                class="btn btn-info m-3 rounded-pill change-btn"
-                id="CL"
-              >
-                Chẵn lẻ
-              </div>
-              <div class="btn btn-info m-3 rounded-pill change-btn" id="TX">Tài Xỉu</div>
               <div class="table-responsive d-none d-block">
                 <table class="table table-bordered table-striped text-center">
                   <thead class="bg-primary text-light">
@@ -364,20 +357,13 @@
         currentMoney.innerHTML = localStorage.getItem("currentMoney");
       }
       function nap() {
+        if(localStorage.getItem("currentMoney")===null){
+          localStorage.setItem("currentMoney",0)
+        }
         let money = parseInt(localStorage.getItem("currentMoney"), 10);
         localStorage.setItem("currentMoney", money + 100000);
         window.location.reload();
       }
-      // function open (i) {
-      //   var current = document.getElementsByClassName("d-block");
-      //   current[0].className = current[0].className.replace("d-block", "");
-      //   var tables = document.getElementsByClassName("d-none");
-      //   tables[i].classList.add("d-block");
-      // }
-      // var btns = document.getElementsByClassName("change-btn");
-      // for (var i = 0; i < btns.length; i++) {
-      //   btns[i].addEventListener("click",open(i));
-      // }
     </script>
   </body>
 </html>
