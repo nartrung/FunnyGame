@@ -357,7 +357,7 @@
         currentMoney.innerHTML = localStorage.getItem("currentMoney");
       }
       function nap() {
-        if(localStorage.getItem("currentMoney")===null){
+        if(localStorage.getItem("currentMoney")===null || localStorage.getItem("currentMoney")==="NaN"){
           localStorage.setItem("currentMoney",0)
         }
         let money = parseInt(localStorage.getItem("currentMoney"), 10);
